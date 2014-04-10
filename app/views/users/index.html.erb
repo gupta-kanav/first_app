@@ -1,4 +1,53 @@
-<h1>Listing users</h1>
+<!-- <h1>Listing users</h1> -->
+
+
+<!-- <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %> -->
+
+
+<!-- <%= pie_chart({"Football" => 10, "Basketball" => 5}) %>
+
+<%= pie_chart User.group("name").count %>
+
+<%= line_chart @users.map { |goal| 
+  {
+    :name => goal.name, 
+    :data => goal.email 
+  } 
+} %>
+
+<%= line_chart({20.day.ago => 5, 1368174456 => 4, "2013-05-07 00:00:00 UTC" => 7}) %>
+<%= column_chart User.group("name").count %>
+
+ 
+ 
+ <%= pie_chart (@data) %>
+ 
+ <%=line_chart(@data)%>
+ 
+ <%= column_chart (@data) %> -->
+ 
+ 
+ 
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    new Highcharts.Chart({  
+    chart: { renderTo: 'orders_chart' },  
+    title: { text: 'Orders by Day' },  
+    xAxis: { type: 'datetime' },  
+    yAxis: {  
+      title: { text: 'Dollars'}  
+    },  
+    series: [{  
+      data: [1, 2, 5, 7, 3]  
+    }]  
+  });  
+});  
+</script>
+<div id="orders_chart" style="width:560px; height:300px;"></div>
+<table class="pretty">  
+
+
+</table>
 
 <table>
   <thead>
@@ -10,6 +59,9 @@
       <th></th>
     </tr>
   </thead>
+
+  
+  
 
   <tbody>
     <% @users.each do |user| %>
@@ -27,3 +79,7 @@
 <br>
 
 <%= link_to 'New User', new_user_path %>
+
+ 
+
+  

@@ -1,6 +1,8 @@
 FirstApp::Application.routes.draw do
   
   resources :users
+  
+   get '/getvisualizations' => "users#getvisualizations"
 
 #root_url  -> 'http://http://vast-woodland-3567.herokuapp.com/'
   # The priority is based upon order of creation: first created -> highest priority.

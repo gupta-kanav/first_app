@@ -1,0 +1,66 @@
+<%= pie_chart({"0-5000 INR" => @dos_5K, "5000-1000 INR" => @dos_5K_10K,"10000-15000 INR"=>@dos_10K_15K,"15000-20000  INR"=>@dos_15K_20K,">20000 INR"=>@dos_20K}) %>
+
+
+
+
+<%=
+  column_chart [
+    ["0-5000 INR", @dos_5K],
+    ["5000-1000 INR",@dos_5K_10K],
+    ["10000-15000 INR", @dos_10K_15K],
+    ["15000-20000  INR", @dos_15K_20K],
+    [">20000 INR", @dos_20K]
+  ],
+  height: "220px",
+  library: {
+    width: 665,
+    fontName: "Helvetica Neue",
+    colors: ["#29abe2"],
+    tooltip: {
+      textStyle: {
+        color: "#333333"
+      }
+    },
+    bar: {
+      groupWidth: "50%"
+    },
+    vAxis: {
+      title: "Income",
+      titleTextStyle: {
+        italic: false,
+        color: '#777'
+      },
+      gridlines: {
+        color: "#eeeeee"
+      },
+      viewWindow: {
+        max: 50
+      }
+    }
+  }
+%>
+<!-- <%= pie_chart User.group("name").count %> -->
+
+
+<%= bar_chart(@array_of_arrays1)%>
+
+
+
+
+<!-- <%= line_chart @array_of_hashes.map { |goal| 
+  {
+    :name => goal[:name], 
+    :data => goal[:data] 
+  } 
+} %> -->
+
+<!-- <%= line_chart({"0-5000 INR" => 5, "5000-1000 INR" => 4, "10000-15000 INR" => 7}) %> -->
+<!-- <%= column_chart User.group("name").count %> -->
+
+ 
+ 
+ <!-- <%= pie_chart (@data) %> -->
+ 
+ <!-- <%=line_chart(@data)%> -->
+ 
+ <!-- <%= column_chart (@data) %> -->
